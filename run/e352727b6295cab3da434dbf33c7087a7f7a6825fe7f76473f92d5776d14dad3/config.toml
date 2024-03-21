@@ -1,0 +1,34 @@
+device = "cuda:0"
+mnist_dir = "./res/mnist"
+train = []
+
+[[run]]
+train = false
+feature_dir = "../sparse_autoencoder/run/171d21f725b8721bc98f2d334b103d6b0e83570a958c461866fd12c6280a670f"
+epochs = 23
+batch_size = 64
+diffusion_steps = 400
+hidden_size = 256
+lr = 0.0001
+drop_prob = 0.0
+
+[[eval]]
+feature_dir = "../sparse_autoencoder/run/171d21f725b8721bc98f2d334b103d6b0e83570a958c461866fd12c6280a670f"
+model_path = "./run/7927ad448cfdb96d1e819f599d5ce8a200a3de67068866289c8cf1e0215ec398/model/epoch-22.pth"
+diffusion_steps = 400
+hidden_size = 256
+num_generations = 8
+feature_ids = [
+    128,
+    86,
+    109,
+]
+centile_edits = [
+    0.1,
+    0.25,
+    0.75,
+    0.9,
+]
+data_ids = [
+    0,
+]
